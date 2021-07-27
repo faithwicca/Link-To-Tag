@@ -4,6 +4,7 @@ folder = input('folder?')
 folderList = listdir(folder)  # makes a list of all files in a vault
 # print(folderList)
 tag = input('tag?')
+hashtag = tag.replace(' ', '_')
 
 for f in folderList:  # goes through all files in a vault
     dot = f.find('.')
@@ -35,7 +36,7 @@ for f in folderList:  # goes through all files in a vault
             for element in filest:
                 print(element, file=file)
             print('#' + tag, file=file)  # adding a tag at the end of file
-            print('tag "', tag, '" updated in file ', f[:-3], sep='')
+            print('tag "', hashtag, '" updated in file ', f[:-3], sep='')
             file.close()
         else:
             print('no such tag in file ' + f[:-3])
